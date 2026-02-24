@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto 0 auto;
+  padding: 0 200px;
+}
+
+section {
+  margin-bottom: 50px;
+}
+
+.mt-20 { margin-top: 20px; }
+.mb-20 { margin-bottom: 20px; }
+.p-20  { padding: 20px; }
+
+.text-center { text-align: center; }
