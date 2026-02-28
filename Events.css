@@ -1,0 +1,243 @@
+    :root {
+      --bg:          white;
+      --text:        #1a1a1a;
+      --primary:     #ff6200;
+      --primary-dark:#e65100;
+      --accent-red:  #d32f2f;
+      --highlight:   #ffeb3b;
+      --gray:        #555;
+      --light-gray:  #f5f5f5;
+      --radius:      12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: clamp(16px, 3.4vw, 17px);
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.1rem, 6vw, 2.8rem);
+      color: var(--primary);
+      text-align: center;
+      padding: 1.8rem 0 0.6rem;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 5vw, 2.2rem);
+      color: var(--accent-red);
+      text-align: center;
+      margin: 1.6rem 0 1rem;
+    }
+
+    .intro-text {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      color: var(--gray);
+      font-size: clamp(1rem, 3.2vw, 1.1rem);
+      padding: 0 12px;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: clamp(1.2rem, 3vw, 1.8rem);
+      margin: 1.5rem 0 3.5rem;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border-bottom: 6px solid var(--primary);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.09);
+      transition: all 0.28s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .event-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 14px 28px rgba(255, 69, 0, 0.20);
+        border-bottom-color: var(--accent-red);
+      }
+    }
+
+    .event-card:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    }
+
+    .event-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      object-position: center;
+      background: #f0f0f0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .event-image-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffe082, #ffcc80);
+      color: #d84315;
+      font-size: 1.1rem;
+      font-weight: 500;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .event-header {
+      padding: clamp(1rem, 3vw, 1.3rem) clamp(1rem, 3vw, 1.4rem);
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8a65 100%);
+      color: white;
+    }
+
+    .event-header h3 {
+      margin: 0;
+      font-size: clamp(1.25rem, 4vw, 1.45rem);
+    }
+
+    .event-body {
+      padding: clamp(1.1rem, 3.5vw, 1.4rem);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event-date {
+      font-weight: 600;
+      color: var(--primary-dark);
+      font-size: clamp(0.95rem, 3vw, 1.05rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .event-venue {
+      color: #444;
+      font-size: clamp(0.9rem, 2.8vw, 0.98rem);
+      margin-bottom: 0.8rem;
+    }
+
+    .event-purpose {
+      background: var(--light-gray);
+      padding: clamp(0.9rem, 3vw, 1rem);
+      border-radius: 8px;
+      margin: 0.9rem 0 1.1rem;
+      font-style: italic;
+      color: #333;
+      border-left: 4px solid var(--highlight);
+      font-size: clamp(0.95rem, 3vw, 1rem);
+      flex: 1;
+    }
+
+    .wishlist-section {
+      background: var(--highlight);
+      padding: clamp(2.2rem, 6vw, 3.2rem) 0;
+      margin: 3rem 0 4rem;
+      border-radius: 16px;
+    }
+
+    .wishlist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: clamp(1.4rem, 4vw, 2rem);
+      padding: 0 12px;
+    }
+
+    .wishlist-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: clamp(1.3rem, 4vw, 1.8rem);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-top: 6px solid var(--accent-red);
+    }
+
+    .wishlist-card h3 {
+      color: var(--accent-red);
+      margin-bottom: 1.1rem;
+      font-size: clamp(1.3rem, 4.2vw, 1.55rem);
+    }
+
+    .wishlist-card ul {
+      list-style: none;
+      font-size: clamp(1rem, 3.2vw, 1.05rem);
+      line-height: 1.7;
+    }
+
+    .wishlist-card li {
+      margin-bottom: 0.8rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .wishlist-card li::before {
+      content: "•";
+      color: var(--primary);
+      font-size: 1.8rem;
+      position: absolute;
+      left: 0;
+      line-height: 1;
+    }
+
+    .visual-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .visual-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+      font-size: clamp(1rem, 3.2vw, 1.05rem);
+      line-height: 1.5;
+    }
+
+    .item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      border: 2px solid #fff;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 14px; }
+      .events-grid { grid-template-columns: 1fr; gap: 1.4rem; }
+      .event-card { border-bottom-width: 5px; }
+      .event-image { height: 160px; }
+      .wishlist-grid { grid-template-columns: 1fr; gap: 1.6rem; }
+      h1 { padding-top: 1.4rem; }
+      .intro-text { margin-bottom: 1.8rem; }
+      .item-icon { width: 44px; height: 44px; }
+    }
+
+    @media (max-width: 380px) {
+      .event-header h3,
+      .wishlist-card h3 {
+        font-size: 1.3rem;
+      }
+      .event-image { height: 140px; }
+      .item-icon { width: 40px; height: 40px; }
+    }
