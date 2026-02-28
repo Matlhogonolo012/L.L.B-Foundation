@@ -1,14 +1,13 @@
-
     :root {
-      --bg: white;
-      --text: #1a1a1a;
-      --primary: #ff6200;
+      --bg:          white;
+      --text:        #1a1a1a;
+      --primary:     #ff6200;
       --primary-dark:#e65100;
-      --accent-red: #d32f2f;
-      --highlight: #ffeb3b;
-      --gray: #555;
-      --light-gray: #f5f5f5;
-      --radius: 12px;
+      --accent-red:  #d32f2f;
+      --highlight:   #ffeb3b;
+      --gray:        #555;
+      --light-gray:  #f5f5f5;
+      --radius:      12px;
     }
 
     * {
@@ -87,10 +86,10 @@
 
     .event-image {
       width: 100%;
-      height: 180px;                    
-      object-fit: cover;                
+      height: 180px;
+      object-fit: cover;
       object-position: center;
-      background: #f0f0f0;              
+      background: #f0f0f0;
       border-bottom: 1px solid #eee;
     }
 
@@ -198,6 +197,31 @@
       line-height: 1;
     }
 
+    .visual-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .visual-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+      font-size: clamp(1rem, 3.2vw, 1.05rem);
+      line-height: 1.5;
+    }
+
+    .item-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      border: 2px solid #fff;
+    }
+
     @media (max-width: 600px) {
       .container { padding: 0 14px; }
       .events-grid { grid-template-columns: 1fr; gap: 1.4rem; }
@@ -206,6 +230,7 @@
       .wishlist-grid { grid-template-columns: 1fr; gap: 1.6rem; }
       h1 { padding-top: 1.4rem; }
       .intro-text { margin-bottom: 1.8rem; }
+      .item-icon { width: 44px; height: 44px; }
     }
 
     @media (max-width: 380px) {
@@ -214,4 +239,5 @@
         font-size: 1.3rem;
       }
       .event-image { height: 140px; }
+      .item-icon { width: 40px; height: 40px; }
     }
